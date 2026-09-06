@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E9F3DB">
+<title>سجل الزائرات · الروضة الأولى بأحد المسارحة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-header">
+    <img class="page-header__logo" src="moe-logo.png" alt="وزارة التعليم">
+    <h1 class="page-header__title">الروضة الأولى بأحد المسارحة</h1>
+    <p class="page-header__since">تأسست ١٤١٦هـ</p>
+  </header>
+
+  <main class="card">
+    <div class="card__body">
+
+      <div class="intro" id="cardIntro">
+        <h2>سجل الزائرات</h2>
+        <p>يرجى تعبئة جميع الحقول التالية</p>
+      </div>
+
+      <form id="visitorForm" novalidate>
+
+        <div class="field">
+          <label for="fullName">الاسم الرباعي <span class="req">*</span></label>
+          <input type="text" id="fullName" name="fullName"
+                 autocomplete="name" enterkeyhint="next"
+                 placeholder="سارة عبدالله محمد الأحمدي">
+          <p class="field__error" data-for="fullName"></p>
+        </div>
+
+        <div class="field">
+          <label for="nationalId">رقم السجل المدني <span class="req">*</span></label>
+          <input type="text" id="nationalId" name="nationalId"
+                 inputmode="numeric" maxlength="10" enterkeyhint="next"
+                 placeholder="1xxxxxxxxx">
+          <p class="field__hint">١٠ أرقام تبدأ بـ ١ أو ٢</p>
+          <p class="field__error" data-for="nationalId"></p>
+        </div>
+
+        <div class="field">
+          <label for="mobile">رقم الجوال <span class="req">*</span></label>
+          <input type="tel" id="mobile" name="mobile"
+                 inputmode="numeric" maxlength="10" enterkeyhint="next"
+                 placeholder="05xxxxxxxx">
+          <p class="field__hint">١٠ أرقام تبدأ بـ 05</p>
+          <p class="field__error" data-for="mobile"></p>
+        </div>
+
+        <div class="field">
+          <label for="visitDate">تاريخ الزيارة <span class="req">*</span></label>
+          <input type="date" id="visitDate" name="visitDate" enterkeyhint="next">
+          <p class="field__error" data-for="visitDate"></p>
+        </div>
+
+        <div class="field">
+          <label for="relation">صفة الزائر <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="relation" name="relation">
+              <option value="" disabled selected>اختر الصفة…</option>
+              <option value="معلم">معلم</option>
+              <option value="طالب">طالب</option>
+              <option value="ولي أمر">ولي أمر</option>
+              <option value="مشرف">مشرف</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+          </div>
+          <p class="field__error" data-for="relation"></p>
+        </div>
+
+        <div class="field" id="relationOtherField" hidden>
+          <label for="relationOther">حدد الصفة <span class="req">*</span></label>
+          <input type="text" id="relationOther" name="relationOther"
+                 enterkeyhint="next" placeholder="اكتب صفة الزائر">
+          <p class="field__error" data-for="relationOther"></p>
+        </div>
+
+        <div class="field">
+          <label for="reason">سبب الزيارة <span class="req">*</span></label>
+          <textarea id="reason" name="reason" enterkeyhint="done"
+                    placeholder="حضور اجتماع أولياء الأمور"></textarea>
+          <p class="field__error" data-for="reason"></p>
+        </div>
+
+        <button type="submit" class="btn" id="submitBtn">إرسال</button>
+      </form>
+
+    </div>
+  </main>
+
+  <footer class="credits">
+    <p class="credits__org">مبادرة رقمنة الأعمال الإدارية</p>
+    <p>مديرة الروضة / آمنة زربة</p>
+    <p>فكرة وتنفيذ / نجاة قمير</p>
+  </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>
