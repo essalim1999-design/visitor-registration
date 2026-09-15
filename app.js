@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var API_URL = 'https://script.google.com/macros/s/AKfycbz5W8Mw-SNHCr7C_dcICGKvjSIQb2GQm9dAQZFMtnPGvOKix_vo6_SYlgfRCrIllLfTbw/exec';
+  var API_URL = 'https://script.google.com/macros/s/AKfycbxakmyM29ZwBAB83lgXDRLQJ9nvI1FbxAWGXVRmwqfBihZpIjedmfj7e5DdbgGIFV76Ng/exec';
 
   var form       = document.getElementById('visitorForm');
   var submitBtn  = document.getElementById('submitBtn');
