@@ -189,7 +189,7 @@
     showLoading();
 
     var controller = new AbortController();
-    var timeout = setTimeout(function () { controller.abort(); }, 20000);
+    var timeout = setTimeout(function () { controller.abort(); }, 30000);
 
     fetch(API_URL, { method: 'POST', body: JSON.stringify(data), signal: controller.signal })
       .then(function (res) { return res.json(); })
