@@ -8,6 +8,7 @@
  */
 
 var SHEET_NAME = 'سجل الزائرات';
+var ALERT_EMAIL = 'essalim1999@gmail.com';
 var HEADERS = [
   'الطابع الزمني',
   'الاسم الرباعي',
@@ -72,7 +73,18 @@ function doPost(e) {
 
     return json_({ status: 'success', message: 'تم التسجيل بنجاح' });
   } catch (err) {
+    notifyError_(err);
     return json_({ status: 'error', message: String(err) });
+  }
+}
+
+function notifyError_(err) {
+  try {
+    MailApp.sendEmail(ALERT_EMAIL,
+      'خطأ في سجل الزائرات',
+      'صار خطأ أثناء حفظ بيانات زائرة:\n\n' + String(err));
+  } catch (mailErr) {
+    // تجاهل فشل إرسال الإيميل نفسه حتى لا يوقف الاستجابة للمستخدم
   }
 }
 
